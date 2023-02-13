@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import { routes } from "./routes";
+import NotFound from "./components/errors/NotFound";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const nestedRoute = (route) => {
+  return route?.children?.length
+    ? route?.children?.map((childRoute) => (
+        <Route key={Math.random()} {...childRoute}>
+          {nestedRoute(childRoute)}
+        </Route>
+      ))
+    : "";
+};
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      {routes?.map((layout) => (
+        <Route
+          key={Math.random()}
+          path={layout?.path}
+          element={layout?.element}
+          errorElement={<NotFound />}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+          {nestedRoute(layout)}
+        </Route>
+      ))}
+    </>
+  )
+);
+
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
 export default App;
