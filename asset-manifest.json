@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kiwify-test-project/static/css/main.5f8ab9d2.css",
+    "main.js": "/kiwify-test-project/static/js/main.e7f8bfcf.js",
+    "static/js/787.65142784.chunk.js": "/kiwify-test-project/static/js/787.65142784.chunk.js",
+    "index.html": "/kiwify-test-project/index.html",
+    "main.5f8ab9d2.css.map": "/kiwify-test-project/static/css/main.5f8ab9d2.css.map",
+    "main.e7f8bfcf.js.map": "/kiwify-test-project/static/js/main.e7f8bfcf.js.map",
+    "787.65142784.chunk.js.map": "/kiwify-test-project/static/js/787.65142784.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f8ab9d2.css",
+    "static/js/main.e7f8bfcf.js"
+  ]
+}
